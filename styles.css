@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro); 
+    color: var(--claro); 
+ }
+
+ .navegacao {
+    
+    position: fixed; /* fixa a barra de navegação no topo da página */
+    top: 0; /* posiciona a barra de navegação no topo */ 
+    background: rgba(15, 23, 42, 0.8); /* cor de fundo com transparência */
+    width: 100%; /* largura total da "caixa" */
+    z-index: 100; /* garante que a barra fique acima de outros elementos */
+    padding: 1.5rem; /* espaçamento interno */
+
+ }
+
+
+ .menu {
+    display: flex; /* deixa os itens na mesma linha um ao lado do outro */
+    list-style: none; /* remove os marcadores padrão da lista */
+    gap: 3rem; /* espaçamento entre os itens */
+    justify-content: center;  /* centraliza os itens horizontalmente (no meio da pagina) */
+    
+ }
+ .menu-link {
+    text-decoration: none; /* remove o sublinhado dos links */
+    color: var(--claro); /* cor do texto */
+    font-weight: 500; /* deixa o texto em negrito */
+    position: relative; /* necessário para o pseudo-elemento */
+    padding: 0.5rem; /* espaçamento interno para o link */
+   }
+
+.menu-link::after {
+    content: ''; /* necessário para criar o pseudo-elemento */
+    height: 2px; /* altura da linha */
+    width: 0%; /* largura total do link */
+    position: absolute; /* posicionamento absoluto */
+    bottom: 0; /* posiciona a linha na parte inferior do link */
+    left: 0; /* alinha a linha à esquerda */
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /* cor da linha */
+    transition: width 0.5s ease; /* animação suave para a largura */
+   
+}
+
+.menu-link:hover::after {
+    width: 100%; /* expande a linha para a largura total do link ao passar o mouse */
+}
+
+.cabecalho {
+    display: flex; /* deixa os itens na mesma linha um ao lado do outro */
+    flex-direction: column; /* organiza os itens em coluna */
+    align-items: center; /* centraliza os itens horizontalmente */
+    justify-content: center; /* centraliza os itens verticalmente */
+    height: 100vh; /* altura total da tela */
+    text-align: center; /* centraliza o texto */
+    gap: 1rem; /* espaçamento entre os elementos */
+}
+
+.foto-perfil {
+    
+    width: 500; /* largura da foto */
+    height: 500px; /* altura da foto  */
+    border-radius: 20%; /* deixa a foto redonda */
+    
+}
+
+h1 {
+    font-size: 3.5rem; /* tamanho da fonte */
+    color: var(--primaria); /* cor do título */
+font-weight: bold;
+margin: 20px;    
+}
+
+.hobby-imagem {
+    width: 300px; /* largura da imagem */
+    height: 200px; /* altura da imagem */
+    border-radius: 10px; /* bordas arredondadas */
+    object-fit: cover; /* mantém a proporção da imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra para dar profundidade */
+    transition: transform 0.3s ease; /* animação suave ao passar o mouse */
+}
+
+.sub-titulo {
+    font-size: 1.5rem; /* tamanho da fonte */
+    color: var(--claro); /* cor do subtítulo */
+    font-weight: 400;
+}
+
+.sobre {
+    padding: 6rem 2rem; /* espaçamento interno */
+
+}
+
+.sobre-titulo {
+    text-align: center; /* centraliza o texto */
+    font-size: 3rem; /* tamanho da fonte */
+    color: var(--claro); /* cor do título */
+    margin-bottom: 20px; /* espaçamento abaixo do título */
+
+
+}
+
+.sobre-caixa{
+    padding: 3rem; /* espaçamento interno */
+    max-width: 800px;  /* largura máxima da caixa */
+    margin: 0 auto; /* centraliza a caixa horizontalmente */
+    border-radius: 16px; /* bordas arredondadas */
+    border: 1px solid var(--vidro); /* borda da caixa */
+    backdrop-filter: blur(10px); /* efeito de vidro fosco */
+    background: rgb(255, 255, 255, 0.05); /* cor de fundo com transparência */
+}
+
+.sobre-paragrafo{
+
+    text-align: center; /* centraliza o texto */
+    font-size: 1.2rem; /* tamanho da fonte */
+
+
+}
+
