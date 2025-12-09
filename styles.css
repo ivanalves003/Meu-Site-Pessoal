@@ -68,37 +68,42 @@ body {
 
 .cabecalho {
     display: flex; /* deixa os itens na mesma linha um ao lado do outro */
-    flex-direction: column; /* organiza os itens em coluna */
+    flex-direction: row; /* organiza os itens em coluna */
     align-items: center; /* centraliza os itens horizontalmente */
     justify-content: center; /* centraliza os itens verticalmente */
     height: 100vh; /* altura total da tela */
     text-align: center; /* centraliza o texto */
-    gap: 1rem; /* espaçamento entre os elementos */
+    gap: 9rem; /* espaçamento entre os elementos */
+    padding: 0 2rem; /* espaçamento interno nas laterais */
+}
+
+/* container do texto para manter h1 e subtítulo empilhados */
+.cabecalho-texto {
+    display: flex; /* deixa os itens na mesma linha um ao lado do outro */
+    flex-direction: column; /* organiza os itens em coluna */
+    align-items: flex-start;    /* alinha os itens à esquerda */
+    gap: 0.5rem; /* espaçamento entre os elementos */
 }
 
 .foto-perfil {
     
-    width: 500; /* largura da foto */
-    height: 500px; /* altura da foto  */
-    border-radius: 20%; /* deixa a foto redonda */
+    display: flex; /* deixa os itens na mesma linha um ao lado do outro */
+    flex-direction: column; /* organiza os itens em coluna */
+    align-items: flex-start; /* alinha os itens à esquerda */
+    gap: 0.5rem; /* espaçamento entre os elementos */
+    width: 500px; /* largura da foto */
+    height: 600px; /* altura da foto  */
+    border-radius: 20%; /* bordas arredondadas */
     
 }
 
 h1 {
     font-size: 3.5rem; /* tamanho da fonte */
     color: var(--primaria); /* cor do título */
-font-weight: bold;
-margin: 20px;    
+    font-weight: bold; /* deixa o texto em negrito */
+    margin: 20px; /* espaçamento ao redor do título */
 }
 
-.hobby-imagem {
-    width: 300px; /* largura da imagem */
-    height: 200px; /* altura da imagem */
-    border-radius: 10px; /* bordas arredondadas */
-    object-fit: cover; /* mantém a proporção da imagem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra para dar profundidade */
-    transition: transform 0.3s ease; /* animação suave ao passar o mouse */
-}
 
 .sub-titulo {
     font-size: 1.5rem; /* tamanho da fonte */
@@ -135,6 +140,155 @@ margin: 20px;
     text-align: center; /* centraliza o texto */
     font-size: 1.2rem; /* tamanho da fonte */
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.projetos{
+    
+    padding: 6rem 2rem; /* espaçamento interno */
+    background-color: var(--maisEscuro); /* cor de fundo da seção */
+}
+
+.projetos-titulo {
+    text-align: center; /* centraliza o texto */
+    font-size: 2rem; /* tamanho da fonte */
+    color: var(--claro); /* cor do título */
+    margin-bottom: 50px; /* espaçamento abaixo do título */
 
 }
 
+
+.projetos-caixa {
+    display: grid; /* deixa os itens na mesma linha um ao lado do outro */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* cria colunas responsivas */
+    gap: 2rem; /* espaçamento entre os itens */
+    max-width: 1200px; /* largura máxima da caixa */
+    margin: 0 auto; /* centraliza a caixa horizontalmente */
+    padding: 0 1rem; /* espaçamento interno nas laterais */
+}
+
+.projetos-card{
+    background: rgb(255, 255, 255, 0.05); /* cor de fundo com transparência */
+    border: 1px solid var(--vidro); /* borda da caixa */
+    border-radius: 16px; /* bordas arredondadas */
+    backdrop-filter: blur(5px); /* efeito de vidro fosco */
+    overflow: hidden; /* esconde o conteúdo que ultrapassa a caixa */
+    transition: all 0.5s ease; /* animação suave para todas as propriedades */
+    cursor: pointer; /* muda o cursor para indicar que é clicável */
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2); /* adiciona sombra ao passar o mouse */
+    transform: translateY(-10px) scale(1.05); /* levanta e aumenta a escala do cartão */
+}
+
+.hobby-imagem {
+    height: 200px; /* altura da imagem */
+    width: 100%; /* largura da imagem */
+    object-fit: cover; /* mantém a proporção da imagem */
+}
+   
+
+.info-projetos{
+    margin-bottom: 5px;
+
+
+}
+
+.caixa-textos-projeto{
+    padding: 1.5rem; /* espaçamento interno */
+}
+
+.info-paragrafo{    
+    color: rgba(226, 232, 240, 0.8); /* cor do parágrafo com transparência */
+    line-height: 1.25rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contatos{
+
+    padding: 6rem 2rem; /* espaçamento interno */
+
+}
+.contatos-titulo{
+    text-align: center; /* centraliza o texto */
+    font-size: 2rem; /* tamanho da fonte */
+    margin-bottom: 50px; /* espaçamento abaixo do título */
+
+}
+
+.formulario-contatos{
+
+    max-width: 600px; /* largura máxima do formulário */
+    margin: 0 auto; /* centraliza o formulário horizontalmente */
+    background: rgb(255, 255, 255, 0.05); /* cor de fundo com transparência */
+    border-radius: 16px; /* bordas arredondadas */
+    backdrop-filter: blur(5px); /* efeito de vidro fosco */
+    padding: 2rem;
+    border: 1px solid var(--vidro); /* borda da caixa */
+
+}
+
+
+.campo-form{
+    width: 100%; /* largura total do campo */
+    padding: 1rem; /* espaçamento interno */
+    background: rgb(255, 255, 255, 0.05); /* cor de fundo com transparência */
+    border-radius: 8px; /* bordas arredondadas */
+    color: var(--claro); /* cor do texto */
+    border: 1px solid var(--vidro); /* borda da caixa */
+    outline: none; /* remove o contorno ao focar */
+
+}
+
+.campo-form:focus{
+    border-color: var(--secundaria);
+    box-shadow: 0 0 5px var(--secundaria);
+}
+
+.grupo-form{
+
+    margin-bottom: 1.5rem;
+
+
+}
+
+.botao-form{
+    color: var(--claro); /* cor do texto */
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* cor de fundo com gradiente */
+    padding: 1rem 2rem; /* espaçamento interno */
+    border: none; /* remove a borda padrão */
+    border-radius: 8px; /* bordas arredondadas */
+    cursor: pointer; /* muda o cursor para indicar que é clicável */
+    font-weight: bold;
+    width: 100%; /* largura total do botão */
+    transition: 0.5s ease; /* animação suave para o fundo */
+}
+
+.botao-form:hover{
+    background: linear-gradient(45deg, var(--secundaria), var(--primaria)); /* inverte as cores do gradiente ao passar o mouse */
+    box-shadow: 0 0 10px var(--secundaria); /* adiciona sombra ao passar o mouse */
+}

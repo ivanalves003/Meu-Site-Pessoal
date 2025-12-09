@@ -17,7 +17,7 @@
                 <a href="#sobre" class="menu-link">Sobre</a>
             </li>
             <li>
-                <a href="#hobbys" class="menu-link">Hobbys</a>
+                <a href="#projetos" class="menu-link">Hobbys</a>
             </li>
             <li>
                 <a href="#contato" class="menu-link">Contato</a>
@@ -32,10 +32,12 @@
 
     <main id="inicio" class="cabecalho">
         
-
+        <div class="cabecalho-texto">
+            <h1>Ivan Alves</h1>
+            <p class="sub-titulo">Desenvolvedor de Software</p>
+        </div>
+            
         <img src="IMG_4325.JPG" alt="foto ivan alves" class="foto-perfil">
-        <h1>Ivan Alves</h1>
-        <p class="sub-titulo">Desenvolvedor de Software</p>
 
 
     </main>
@@ -56,44 +58,52 @@
 
 
 
-    <section id="hobbys" class="hobbys">
+    <section id="projetos" class="projetos">
         
-        <h2 class="hobbys-titulo">Meus Principais hobbys</h2>
+        <h2 class="projetos-titulo">Meus Principais hobbys</h2>
 
-          <div class="hobby-lista">
-            <img src="Estudos.JPG" alt="pessoa estudando" class="hobby-imagem">
-            <h3 class="info-hobby">Estudos</h3>
-            <p class="info-paragrafo"> Passo a maior parte do meu tempo estudando, e aprendendo coisas novas, a imagem mostra o cansaco mental </p>
-        </div>
+        <div class = "projetos-caixa">
+            <div class="projetos-card">
+                <img src="Estudos.JPG" alt="pessoa estudando" class="hobby-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Estudos</h3>
+                    <p class="info-paragrafo"> Passo a maior parte do meu tempo estudando, e aprendendo coisas novas, a imagem mostra o cansaco mental </p>
+                </div>
+            </div>
 
-        <div class="hobby-lista">
-            <img src="academia.JPG" alt="imagem de academia" class="hobby-imagem">
-            <h3 class="info-hobby">Academia</h3>
-            <p class="info-paragrafo">Gosto de manter meu corpo saudável e ativo, por isso frequento a academia regularmente. A imagem mostra o descanso da mente e o cancaco do fisico</p>
-        </div>
-
+            <div class="projetos-card">
+                <img src="academia.JPG" alt="imagem de academia" class="hobby-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Academia</h3>
+                    <p class="info-paragrafo">Gosto de manter meu corpo saudável e ativo, por isso frequento a academia regularmente. A imagem mostra o descanso da mente e o cancaco do fisico</p>
+                </div>
+            </div>
         
-        <div class="hobby-lista">
-            <img src="viagens.JPG" alt="imagem de viagem" class="hobby-imagem">
-            <h3 class="info-hobby">Viagens</h3>
-            <p class="info-paragrafo">Gosto de viajar e ver paisagens novas. a imagem mostra o descanso da alma</p>
-        </div>
-
-    
+            <div class="projetos-card">
+                <img src="viagens.JPG" alt="imagem de viagem" class="hobby-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Viagens</h3>
+                    <p class="info-paragrafo">Gosto de viajar e ver paisagens novas. a imagem mostra o descanso da alma</p>
+                </div>
+            </div>
+        </div> 
     </section>
 
 
 
 
-    <section id="contato" class="contato">
-        <h2 class="contato-titulo">Contato</h2>
-        <form class="furmulario-contato" id="furmulario">
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato!</h2>
+
+        <form class="formulario-contatos" id="furmulario">
             <div class="grupo-form">
-                <input placeholder="name">
+                <input placeholder="name" class="campo-form">
             </div>
             <div class="grupo-form">
-                <textarea placeholder="Digite sua mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" ></textarea>
             </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
         </form>
     </section>
 </body>
