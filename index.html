@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <div class = "particulas"></div>
+
     <nav class="navegacao">
         <ul class="menu">
             <li>
@@ -20,7 +22,7 @@
                 <a href="#projetos" class="menu-link">Hobbys</a>
             </li>
             <li>
-                <a href="#contato" class="menu-link">Contato</a>
+                <a href="#contatos" class="menu-link">Contato</a>
             </li>
         </ul>
 
@@ -34,10 +36,13 @@
         
         <div class="cabecalho-texto">
             <h1>Ivan Alves</h1>
-            <p class="sub-titulo">Desenvolvedor de Software</p>
+            <p class="sub-titulo">
+                <span class="cursor" aria-hidden="true">|</span>
+                <span class="typed-text"></span>
+            </p>
         </div>
             
-        <img src="IMG_4325.JPG" alt="foto ivan alves" class="foto-perfil">
+        <img src="euivan.jpeg" alt="foto ivan alves" class="foto-perfil">
 
 
     </main>
@@ -49,7 +54,13 @@
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo"> Sobre mim </h2>
         <div class="sobre-caixa">
-            <p class="sobre-paragrafo"> Olá! Meu nome é [Seu Nome] e sou apaixonado por tecnologia e escrita. Neste blog, você encontrará artigos sobre diversos tópicos que me interessam, desde programação até viagens. Espero que você goste do conteúdo e volte sempre!</p>
+            <p class="sobre-paragrafo"> Sou um desenvolvedor de software, movido por curiosidade, prática constante e pela vontade real de entender como as coisas funcionam , não apenas fazer funcionar.
+
+Minha trajetória começou na área técnica, atuando com suporte, infraestrutura e sistemas integrados. Nesse período, lidei diretamente com análise de problemas, redes, comunicação entre dispositivos e ambientes reais de produção. Essa base me trouxe algo que valorizo muito hoje: visão prática, pensamento analítico e responsabilidade com sistemas que impactam pessoas de verdade.
+
+Atualmente, estudo e desenvolvo projetos com foco em back-end e desenvolvimento web, utilizando principalmente Java, além de tecnologias como C#/.NET, Python, HTML, CSS e JavaScript. Gosto de aprender construindo: pequenos sistemas, interfaces simples, automações e projetos que me forcem a sair do “modo tutorial” e realmente pensar como desenvolvedor.
+
+Este site é apenas um espaço para documentar parte do meu dia a dia. Acredito que compartilhar o processo, inclusive as dificuldades, faz parte do crescimento na área e pode ajudar outras pessoas que estão passando pelo mesmo caminho.</p>
             
         </div>
     </section>
@@ -60,14 +71,14 @@
 
     <section id="projetos" class="projetos">
         
-        <h2 class="projetos-titulo">Meus Principais hobbys</h2>
+        <h2 class="projetos-titulo">Meu dia dia</h2>
 
         <div class = "projetos-caixa">
             <div class="projetos-card">
-                <img src="Estudos.JPG" alt="pessoa estudando" class="hobby-imagem">
+                <img src="IMG_4325.JPG" alt="pessoa estudando" class="hobby-imagem">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Estudos</h3>
-                    <p class="info-paragrafo"> Passo a maior parte do meu tempo estudando, e aprendendo coisas novas, a imagem mostra o cansaco mental </p>
+                    <p class="info-paragrafo"> Passo a maior parte do meu tempo estudando.</p>
                 </div>
             </div>
 
@@ -75,7 +86,7 @@
                 <img src="academia.JPG" alt="imagem de academia" class="hobby-imagem">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Academia</h3>
-                    <p class="info-paragrafo">Gosto de manter meu corpo saudável e ativo, por isso frequento a academia regularmente. A imagem mostra o descanso da mente e o cancaco do fisico</p>
+                    <p class="info-paragrafo">Gosto de manter meu corpo saudável e ativo, por isso frequento a academia regularmente.</p>
                 </div>
             </div>
         
@@ -83,7 +94,7 @@
                 <img src="viagens.JPG" alt="imagem de viagem" class="hobby-imagem">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Viagens</h3>
-                    <p class="info-paragrafo">Gosto de viajar e ver paisagens novas. a imagem mostra o descanso da alma</p>
+                    <p class="info-paragrafo">Gosto de viajar e ver paisagens novas. </p>
                 </div>
             </div>
         </div> 
@@ -93,18 +104,85 @@
 
 
     <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em contato!</h2>
+        <h2 class="contatos-titulo">vamos conversar!</h2>
 
-        <form class="formulario-contatos" id="furmulario">
+        <form class="formulario-contatos" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
-                <input placeholder="name" class="campo-form">
-            </div>
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>  
             <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua mensagem" ></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
             </div>
 
             <button type="submit" class="botao-form">Enviar WhatsApp</button>
         </form>
     </section>
+
+    <script>
+        
+        function enviarWhats(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = `5562999765819`;
+        const texto = `Olá, meu nome é ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+        console.log(url);
+        window.open(url, '_blank');
+
+        }
+
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const text = 'Desenvolvedor de Software.';
+        const typed = document.querySelector('.typed-text');
+        const cursor = document.querySelector('.cursor');
+        const delayBeforeStart = 2000; // 2 segundos antes de começar
+        const typingSpeed = 100; // ms por letra ao digitar
+        const deletingSpeed = 50; // ms por letra ao apagar
+        const pauseAfterTyping = 4000; // pausa depois de terminar de digitar
+        const pauseAfterDeleting = 2000; // pausa depois de apagar tudo
+
+        // garante que o cursor fique ao lado do texto
+        typed.parentNode.appendChild(cursor);
+
+        setTimeout(() => {
+            let i = 0;
+            let isDeleting = false;
+
+            function tick() {
+                // atualiza o texto mostrado
+                typed.textContent = text.slice(0, i);
+
+                if (!isDeleting) {
+                    if (i < text.length) {
+                        i++;
+                        setTimeout(tick, typingSpeed);
+                    } else {
+                        // terminou de digitar -> espera e começa apagar
+                        setTimeout(() => {
+                            isDeleting = true;
+                            setTimeout(tick, deletingSpeed);
+                        }, pauseAfterTyping);
+                    }
+                } else {
+                    if (i > 0) {
+                        i--;
+                        setTimeout(tick, deletingSpeed);
+                    } else {
+                        // terminou de apagar -> espera e recomeça
+                        isDeleting = false;
+                        setTimeout(tick, pauseAfterDeleting);
+                    }
+                }
+            }
+
+            tick();
+        }, delayBeforeStart);
+    });
+    </script>
 </body>
 </html>

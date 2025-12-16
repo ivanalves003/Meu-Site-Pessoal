@@ -10,11 +10,11 @@ html {
 }
 
 :root {
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --maisEscuro: #0a0f1c;
-    --claro: #e2e8f0;
+    --primaria: #ffffff;
+    --secundaria: #7e7e7e;
+    --escuro: #040404;
+    --maisEscuro: #000000;
+    --claro: #fafafa;
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
@@ -27,7 +27,7 @@ body {
     
     position: fixed; /* fixa a barra de navegação no topo da página */
     top: 0; /* posiciona a barra de navegação no topo */ 
-    background: rgba(15, 23, 42, 0.8); /* cor de fundo com transparência */
+    background: rgba(17, 17, 17, 0.8); /* cor de fundo com transparência */
     width: 100%; /* largura total da "caixa" */
     z-index: 100; /* garante que a barra fique acima de outros elementos */
     padding: 1.5rem; /* espaçamento interno */
@@ -80,8 +80,9 @@ body {
 /* container do texto para manter h1 e subtítulo empilhados */
 .cabecalho-texto {
     display: flex; /* deixa os itens na mesma linha um ao lado do outro */
+    width: 360px; /* largura do container de texto */
     flex-direction: column; /* organiza os itens em coluna */
-    align-items: flex-start;    /* alinha os itens à esquerda */
+    align-items: center;    /* alinha os itens à esquerda */
     gap: 0.5rem; /* espaçamento entre os elementos */
 }
 
@@ -91,9 +92,12 @@ body {
     flex-direction: column; /* organiza os itens em coluna */
     align-items: flex-start; /* alinha os itens à esquerda */
     gap: 0.5rem; /* espaçamento entre os elementos */
-    width: 500px; /* largura da foto */
-    height: 600px; /* altura da foto  */
-    border-radius: 20%; /* bordas arredondadas */
+    width: 400px; /* largura da foto */
+    height: 400px; /* altura da foto  */
+    border-radius: 50%; /* bordas arredondadas */
+    animation: flutuar 4s ease-in-out infinite; /* animação de flutuar */
+    box-shadow: 1px 1px 120px rgb(78, 78, 78), 0 0 20px rgba(126,126,126,0.08);
+    transition: box-shadow 0.5s ease, transform 0.4s ease;
     
 }
 
@@ -106,9 +110,22 @@ h1 {
 
 
 .sub-titulo {
-    font-size: 1.5rem; /* tamanho da fonte */
-    color: var(--claro); /* cor do subtítulo */
-    font-weight: 400;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.sub-titulo .typed-text {
+  white-space: pre;
+}
+
+.cursor {
+  display: inline-block;
+  margin-right: 6px; /* quando estiver antes do texto */
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 .sobre {
@@ -136,25 +153,11 @@ h1 {
 }
 
 .sobre-paragrafo{
-
-    text-align: center; /* centraliza o texto */
-    font-size: 1.2rem; /* tamanho da fonte */
-
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.5;     /* espaço entre linhas */
+    white-space: pre-line;/* preserva quebras de linha no HTML (opcional) */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .projetos{
     
@@ -177,7 +180,8 @@ h1 {
     gap: 2rem; /* espaçamento entre os itens */
     max-width: 1200px; /* largura máxima da caixa */
     margin: 0 auto; /* centraliza a caixa horizontalmente */
-    padding: 0 1rem; /* espaçamento interno nas laterais */
+    padding: 0 2rem; /* espaçamento interno nas laterais */
+   
 }
 
 .projetos-card{
@@ -191,12 +195,12 @@ h1 {
 }
 
 .projetos-card:hover {
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2); /* adiciona sombra ao passar o mouse */
+    box-shadow: 1px 1px 50px rgb(78, 78, 78), 0 0 20px rgba(126,126,126,0.08);
     transform: translateY(-10px) scale(1.05); /* levanta e aumenta a escala do cartão */
 }
 
 .hobby-imagem {
-    height: 200px; /* altura da imagem */
+    height: 450px; /* altura da imagem */
     width: 100%; /* largura da imagem */
     object-fit: cover; /* mantém a proporção da imagem */
 }
@@ -216,15 +220,6 @@ h1 {
     color: rgba(226, 232, 240, 0.8); /* cor do parágrafo com transparência */
     line-height: 1.25rem;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -256,7 +251,7 @@ h1 {
 .campo-form{
     width: 100%; /* largura total do campo */
     padding: 1rem; /* espaçamento interno */
-    background: rgb(255, 255, 255, 0.05); /* cor de fundo com transparência */
+    background: rgba(254, 254, 254, 0.05); /* cor de fundo com transparência */
     border-radius: 8px; /* bordas arredondadas */
     color: var(--claro); /* cor do texto */
     border: 1px solid var(--vidro); /* borda da caixa */
@@ -277,7 +272,7 @@ h1 {
 }
 
 .botao-form{
-    color: var(--claro); /* cor do texto */
+    color: rgb(0, 0, 0); /* cor do texto */
     background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* cor de fundo com gradiente */
     padding: 1rem 2rem; /* espaçamento interno */
     border: none; /* remove a borda padrão */
@@ -286,9 +281,35 @@ h1 {
     font-weight: bold;
     width: 100%; /* largura total do botão */
     transition: 0.5s ease; /* animação suave para o fundo */
+    font-size: 1.2rem; /* tamanho da fonte */
 }
 
 .botao-form:hover{
     background: linear-gradient(45deg, var(--secundaria), var(--primaria)); /* inverte as cores do gradiente ao passar o mouse */
     box-shadow: 0 0 10px var(--secundaria); /* adiciona sombra ao passar o mouse */
+}
+
+
+.particulas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background:
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+    
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    
 }
