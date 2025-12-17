@@ -25,13 +25,21 @@ Cards com hobbies e imagens
 Formulário de contato integrado ao WhatsApp
 
 📁 Estrutura
+
 📦 meu-blog
+
 ├── index.html
+
 ├── styles.css
+
 ├── euivan.jpeg
+
 ├── IMG_4325.JPG
+
 ├── academia.JPG
+
 ├── viagens.JPG
+
 └── README.md
 ▶️ Como Executar
 
